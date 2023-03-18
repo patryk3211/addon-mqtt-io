@@ -3,10 +3,12 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.1
 FROM ${BUILD_FROM}
 
 # Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Copy Python requirements file
 COPY requirements.txt /tmp/
+
+RUN apk update && apk upgrade
 
 # Setup base
 # hadolint ignore=DL3003,DL3042
