@@ -22,7 +22,8 @@ map:
   - share:rw
   - ssl
 devices:
-  - /dev
+  - /dev/mem
+  - /dev/gpiomem
 options:
   configuration_file: /config/mqtt-io/config.yml
 schema:
